@@ -10,8 +10,9 @@ defmodule DungeonCrawl.CLI.RoomActionsChoice do
     Shell.info(room.description)
     chosen_action =
       room_actions
-      |> Enum.map(&(&1.label))
       # Defined in DungeonCrawl.CLI.BaseCommands
+      # Pass the heroes directly to the function.
+      # It'll be the protocol that choose the right field
       |> display_options
       |> generate_question
       |> Shell.prompt

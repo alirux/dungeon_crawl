@@ -3,7 +3,7 @@ defmodule DungeonCrawl.CLI.Main do
 
   def start_game do
     welcome_message()
-    hero_choice
+    hero_choice()
     crawl(DungeonCrawl.Room.all())
   end
 
@@ -19,6 +19,7 @@ defmodule DungeonCrawl.CLI.Main do
   end
 
   defp crawl(rooms) do
+    # Pick a random room and start it
     rooms
     |> Enum.random()
     |> DungeonCrawl.CLI.RoomActionsChoice.start()

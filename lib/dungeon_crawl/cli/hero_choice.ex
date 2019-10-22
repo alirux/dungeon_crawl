@@ -12,9 +12,8 @@ defmodule DungeonCrawl.CLI.HeroChoice do
     find_hero_by_index = &Enum.at(heroes, &1)
 
     heroes
-    # The next two lines are equivalent
-    #|> Enum.map(&(&1.name))
-    |> Enum.map(fn x -> x.name end)
+    # Pass the heroes directly to the function.
+    # It'll be the protocol that choose the right field
     |> display_options
     |> generate_question
     |> Shell.prompt
