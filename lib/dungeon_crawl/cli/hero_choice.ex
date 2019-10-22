@@ -13,7 +13,7 @@ defmodule DungeonCrawl.CLI.HeroChoice do
 
     heroes
     # Pass the heroes directly to the function.
-    # It'll be the protocol that choose the right field
+    # It'll be the protocol that choose the right field to display
     |> display_options
     |> generate_question
     |> Shell.prompt

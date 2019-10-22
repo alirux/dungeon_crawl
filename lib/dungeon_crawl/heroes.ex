@@ -1,3 +1,4 @@
+# A list of heroes (list of Character)
 defmodule DungeonCrawl.Heroes do
   alias DungeonCrawl.Character
 
@@ -19,4 +20,5 @@ defmodule DungeonCrawl.Heroes do
       attack_description: "a fireball"
     }
   ]
+
 end

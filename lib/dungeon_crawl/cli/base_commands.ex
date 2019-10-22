@@ -6,7 +6,8 @@ defmodule DungeonCrawl.CLI.BaseCommands do
     |> Enum.with_index(1)
     # The next two lines are equivalent
     #|> Enum.each(fn {option, index} -> Shell.info("#{index} - #{option}") end)
-    |> Enum.each(&(Shell.info("#{elem(&1, 1)} - #{DungeonCrawl.Display.info(elem(&1, 0))}")))
+    # The to_string protocol does the magic on elem(&1, 0)
+    |> Enum.each(&(Shell.info("#{elem(&1, 1)} - #{elem(&1, 0)}")))
 
     options
   end
